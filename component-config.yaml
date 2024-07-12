@@ -1,0 +1,24 @@
+name: python-socket-server
+type: service
+runtime: python
+source:
+  git:
+    url: https://github.com/your-username/your-repo.git
+    branch: main
+env:
+  - name: HOST
+    value: "0.0.0.0"
+  - name: PORT
+    value: "5000"
+build:
+  - pip install -r requirements.txt
+expose:
+  - port: 5000
+    protocol: TCP
+run:
+  command: python server.py
+scaling:
+  min: 1
+  max: 5
+  cpu: 500m
+  memory: 512Mi
