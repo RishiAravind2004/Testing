@@ -3,7 +3,7 @@ type: service
 runtime: python
 source:
   git:
-    url: https://github.com/your-username/your-repo.git
+    url: https://github.com/RishiAravind2004/Testing.git
     branch: main
 env:
   - name: HOST
