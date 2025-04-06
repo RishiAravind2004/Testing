@@ -6,14 +6,14 @@ RUN apt update && apt install -y ffmpeg
 # Set working directory
 WORKDIR /app
 
-# Copy everything into container
+# Copy everything
 COPY . .
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Install Python deps
+RUN pip install -r requirements.txt
 
-# Expose the port FastAPI will run on
+# Expose the FastAPI port
 EXPOSE 8000
 
-# Command to run your app
+# Run your app
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
